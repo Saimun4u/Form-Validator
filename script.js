@@ -28,7 +28,21 @@ function validateEmail(email){
 
 //Check user input function
 
-function checkRequired()
+function checkRequired(inputArr){
+    inputArr.forEach((input)=> {
+        if (input.value.trim() === ''){
+            showError(input, `${fieldCap(input)} is required`)
+        }else{
+            showSuccess(input)
+        }
+    })
+}
+
+//Capitalize alert field
+
+function fieldCap(input){
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+}
 
 //Event listener
 
