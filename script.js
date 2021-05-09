@@ -44,6 +44,12 @@ function fieldCap(input){
     return input.id.charAt(0).toUpperCase() + input.id.slice(1)
 }
 
+//Check input length
+
+function checkLength(input, min, max){
+    
+}
+
 //Event listener
 
 form.addEventListener('submit', e => {
@@ -51,32 +57,10 @@ form.addEventListener('submit', e => {
     
     checkRequired([username, email, password, password2]);
 
+    checkLength(username, 3, 15);
+    checkLength(password, 6, 20)
+
 })
 
 
 
-// if (username.value === ''){
-//     showError(username, 'Username is required')
-// } else {
-//     showSuccess(username)
-// }
-
-// if (email.value === ''){
-//     showError(email, 'Email address is required')
-// } else if (!validateEmail(email.value)) {
-//     showError(email, 'Email is not valid')
-// } else {
-//     showSuccess(email)
-// }
-
-// if (password.value === ''){
-//     showError(password, 'Password is required')
-// } else {
-//     showSuccess(password)
-// }
-
-// if (password2.value === ''){
-//     showError(password2, 'Password confirmation is required')
-// } else {
-//     showSuccess(password2)
-// }
