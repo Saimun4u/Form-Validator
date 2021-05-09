@@ -47,7 +47,13 @@ function fieldCap(input){
 //Check input length
 
 function checkLength(input, min, max){
-    
+    if (input.value.length < min){
+        showError(input, `${fieldCap(input)} must be at least ${min} characters`)
+    } else if (input.value.length > max) {
+        showError(input, `${fieldCap(input)} must be more less than ${max} characters`)
+    } else{
+        showSuccess(input)
+    }
 }
 
 //Event listener
